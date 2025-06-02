@@ -9,12 +9,25 @@ class liberary:
         
         
 class Book:
-    def __init__(self):
-        self.name = ...
-        self.Author = ...
-        self.book_cover = ...
-        self.Year_of_production = ...
-        self.publications = ...
+    def __init__(self ,name ,Author ,book_cover ,Year_of_production ,publications):
+        self.name = name
+        self.Author = Author
+        self.book_cover = book_cover
+        self.Year_of_production = Year_of_production
+        self.publications = publications
+        
+    @staticmethod 
+    def add():
+        while True:
+            name = input("pls enter name of book: ")
+            Author = input("pls enter Author of book: ")
+            book_cover = input("pls enter book_cover: ")
+            Year_of_production = input("pls enter Year_of_production of book: ")
+            publications = input("pls enter publications of book: ")
+            for
+            if Book.name == name
+            new_book = Book(name ,Author ,book_cover ,Year_of_production ,publications)
+            Book.append(new_book)
         
         
         
@@ -38,12 +51,7 @@ class Menu():
         while True:
             if chose == 1:
                 print("add Book selected:")
-                book = input("pls enter name of book: ")
-                Author = input("pls enter Author of book: ")
-                book_cover = input("pls enter book_cover: ")
-                Year_of_production = input("pls enter Year_of_production of book: ")
-                publications = input("pls enter publications of book: ")
-                Book.add_book(book ,Author ,book_cover ,Year_of_production ,publications )
+                Book.add()
             elif chose == 2:
                 ...
             elif chose == 3:
