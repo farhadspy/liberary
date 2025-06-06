@@ -27,6 +27,7 @@ class Library:
             for emp in self.employees:
                 print(f"Name: {emp['name']}, ID: {emp['id']}, Section: {emp['section']}, Age: {emp['age']}\n")
  
+ 
 class Book:
     def __init__(self ,name ,author ,book_cover ,year_of_production ,publications ,in_stock):
         self.name = name
@@ -99,6 +100,7 @@ class Member:
 
     def info(self):
         print(f"Member: {self.name}, ID: {self.member_id}, Borrowed books: {len(self.borrowed_books)}\n")
+
 
 class Menu():
     def celected(chose ,library):
