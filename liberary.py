@@ -1,10 +1,10 @@
 class Library:
-    def __init__(self):
-        self.name = "central_library"
-        self.section = ...
-        self.name_employee = ...
-        self.id_employee = ...
-        self.age_employee = ...
+    def __init__(self ,name ,id ,section ,age):
+        self.name_library = "central_library"
+        self.section = section
+        self.name_employee = name
+        self.id_employee = id
+        self.age_employee = age
         self.books = []
         
     def add_book(self, book):
@@ -144,5 +144,12 @@ if __name__ == "__main__":
             name = input("pls enter name: ")
             id = input("pls enter id: ")
             member.info(name , id)
+        elif chose == 3:
+            member = print("Employees of Library info: ")
+            name = input("pls enter name: ")
+            id = int(input("pls enter id: "))
+            section = input("pls enter section: ")
+            age_employee = int(input("pls enter  age: "))
+            member.info(name ,id ,section ,age_employee)
     print("Thank you to use apps. bye👋 ")
     
