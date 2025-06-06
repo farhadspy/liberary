@@ -140,7 +140,7 @@ if __name__ == "__main__":
     library = Library()
     print("Welcome to central_library")
     while True:
-        print("1-menu_of_book \n2-member_info")
+        print("1-menu_of_book \n2-member_info \n3-employees_info")
         try:
             chose = int(input("please chose the number: "))
         except ValueError:
