@@ -9,7 +9,11 @@ class Library:
         
     def add_book(self, book):
         self.books.append(book)
-        print(f"Added {book.name} to {self.name}\n")
+        print(f"Added {book.name} to {self.name_library}\n")
+    
+    def employee_info(self):
+        print(f"Employee: {self.name_employee}, ID: {self.id_employee}, Section: {self.section}, Age: {self.age_employee}\n")
+ 
  
 class Book:
     def __init__(self ,name ,author ,book_cover ,year_of_production ,publications ,in_stock):
@@ -42,7 +46,7 @@ class Book:
         library.add_book(n_book)
     
     @staticmethod
-    def search( name ,library):
+    def search(name ,library):
         flag = 0
         while True:
             for n in library.books:
@@ -119,8 +123,7 @@ class Menu():
                 exit(0)
             
             
-    
-main_book = []       
+         
 if __name__ == "__main__":
     library = Library()
     print("Welcome to centeral_library")
@@ -140,16 +143,18 @@ if __name__ == "__main__":
                 continue
             Menu.celected(number ,library)
         elif chose == 2:
-            member = print("Library members info: ")
+            print("Library members info: ")
             name = input("pls enter name: ")
             id = input("pls enter id: ")
-            member.info(name , id)
+            member = Member(name , id)
+            member.info()
         elif chose == 3:
-            member = print("Employees of Library info: ")
+            print("Employees of Library info: ")
             name = input("pls enter name: ")
             id = int(input("pls enter id: "))
             section = input("pls enter section: ")
             age_employee = int(input("pls enter  age: "))
-            member.info(name ,id ,section ,age_employee)
+            library = Library(name ,id ,section ,age_employee)
+            Library.employee_info()
     print("Thank you to use apps. bye👋 ")
     
