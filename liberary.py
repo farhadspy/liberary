@@ -1,11 +1,12 @@
 class Library:
-    def __init__(self ,name ,id ,section ,age):
+    def __init__(self ,name="Unknown", id="Unknown", section="Unknown", age=0):
         self.name_library = "central_library"
         self.section = section
         self.name_employee = name
         self.id_employee = id
         self.age_employee = age
         self.books = []
+        self.employees = []  # لیست برای ذخیره اطلاعات کارمندها
         
     def add_book(self, book):
         self.books.append(book)
@@ -13,7 +14,18 @@ class Library:
     
     def employee_info(self):
         print(f"Employee: {self.name_employee}, ID: {self.id_employee}, Section: {self.section}, Age: {self.age_employee}\n")
- 
+
+    def add_employee(self, name, id, section, age):
+        self.employees.append({"name": name, "id": id, "section": section, "age": age})
+        print(f"Added employee {name} to {self.name_library}\n")
+
+    def list_employees(self):
+        if not self.employees:
+            print("No employees registered.\n")
+        else:
+            print("Employees list:\n")
+            for emp in self.employees:
+                print(f"Name: {emp['name']}, ID: {emp['id']}, Section: {emp['section']}, Age: {emp['age']}\n")
  
 class Book:
     def __init__(self ,name ,author ,book_cover ,year_of_production ,publications ,in_stock):
@@ -126,7 +138,7 @@ class Menu():
          
 if __name__ == "__main__":
     library = Library()
-    print("Welcome to centeral_library")
+    print("Welcome to central_library")
     while True:
         print("1-menu_of_book \n2-member_info")
         try:
@@ -151,10 +163,16 @@ if __name__ == "__main__":
         elif chose == 3:
             print("Employees of Library info: ")
             name = input("pls enter name: ")
-            id = int(input("pls enter id: "))
-            section = input("pls enter section: ")
-            age_employee = int(input("pls enter  age: "))
-            library = Library(name ,id ,section ,age_employee)
-            Library.employee_info()
+            try:
+                id = int(input("pls enter id: "))
+                section = input("pls enter section: ")
+                age_employee = int(input("pls enter age: "))
+                library.add_employee(name, id, section, age_employee)  # اضافه کردن کارمند به لیست
+                library.list_employees()  # نمایش لیست کارمندها
+            except ValueError:
+                print("ID and Age must be numbers! Try again.\n")
+                continue
+                
+            
     print("Thank you to use apps. bye👋 ")
     
